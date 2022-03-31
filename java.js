@@ -3,7 +3,6 @@ function computerPlay(random) {
 }
 
 let random = ['rock', 'paper', 'scissors'];
-console.log(computerPlay(random))
 
 function playRound(playerSelection, computerSelection) {
   if (playerSelection === 'rock' && computerSelection == 'scissors') {
@@ -23,9 +22,10 @@ function playRound(playerSelection, computerSelection) {
 } else if (playerSelection === 'scissors' && computerSelection === 'rock') {
     return 'You Lose! Rock beats Scissors';
 } else (playerSelection != 'rock' || 'paper' || 'scissors') 
-    return'You have made an invalid choice'
+    return 'Learn how to spell';
 }
 
-const playerSelection = "rock";
+const playerSelection = window.prompt('Please enter rock, paper or scissors').toLowerCase();
 const computerSelection = computerPlay(random)
 console.log(playRound(playerSelection, computerSelection));
+
