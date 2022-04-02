@@ -3,29 +3,44 @@ function computerPlay(random) {
 }
 
 let random = ['rock', 'paper', 'scissors'];
+let playerScore = 0;
+let computerScore = 0;
+
+
 
 function playRound(playerSelection, computerSelection) {
   if (playerSelection === 'rock' && computerSelection == 'scissors') {
-    return 'You Win! Rock beats Scissors';
+    console.log('You Win!');
+    return playerScore += 1;
   } else if (playerSelection === 'rock' && computerSelection === 'paper') {
-     return 'You Lose! Paper beats Rock';
+    console.log('You Lose!');
+     return computerScore += 1;
 } else if (playerSelection === 'rock' && computerSelection === 'rock') {
     return 'Draw!';
 } else if (playerSelection === 'paper' && computerSelection === 'scissors') {
-    return 'You Lose! Scissors beats paper';
+  console.log('You Lose!');
+    return computerScore += 1;
 } else if (playerSelection === 'paper' && computerSelection === 'rock') {
-    return 'You Win! Paper beats rock';
+  console.log('You Win!');
+    return playerScore += 1;
 } else if (playerSelection === 'paper' && computerSelection === 'paper') {
     return'Draw!';
 } else if (playerSelection === 'scissors' && computerSelection === 'scissors') {
     return 'Draw!';
 } else if (playerSelection === 'scissors' && computerSelection === 'rock') {
-    return 'You Lose! Rock beats Scissors';
+  console.log('You Lose!');
+    return computerScore += 1;
+} else if (playerSelection === 'scissors' && computerSelection === 'paper') {
+  console.log('You Win!');
+  return playerScore += 1;
 } else (playerSelection != 'rock' || 'paper' || 'scissors') 
     return 'Learn how to spell';
 }
 
 const playerSelection = window.prompt('Please enter rock, paper or scissors').toLowerCase();
-const computerSelection = computerPlay(random)
+const computerSelection = computerPlay(random);
 console.log(playRound(playerSelection, computerSelection));
 
+
+   
+  
