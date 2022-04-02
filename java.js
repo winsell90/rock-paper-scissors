@@ -5,41 +5,68 @@ function computerPlay(random) {
 let random = ['rock', 'paper', 'scissors'];
 let playerScore = 0;
 let computerScore = 0;
-
+let gamesPlayed = 0;
 
 
 function playRound(playerSelection, computerSelection) {
-  if (playerSelection === 'rock' && computerSelection == 'scissors') {
-    console.log('You Win!');
-    return playerScore += 1;
+  if (playerSelection === 'rock' && computerSelection === 'scissors') {
+    ++playerScore;
+    ++gamesPlayed;
+    return `You Win that round! Your score is ${playerScore} and the computer's is ${computerScore}`;
+
   } else if (playerSelection === 'rock' && computerSelection === 'paper') {
-    console.log('You Lose!');
-     return computerScore += 1;
+    ++computerScore;
+    ++gamesPlayed;
+    return `You Lose that round! Your score is ${playerScore} and the computer's is ${computerScore}`;
+     
 } else if (playerSelection === 'rock' && computerSelection === 'rock') {
     return 'Draw!';
+
 } else if (playerSelection === 'paper' && computerSelection === 'scissors') {
-  console.log('You Lose!');
-    return computerScore += 1;
+    ++computerScore;
+    ++gamesPlayed;
+    return `You Lose that round! Your score is ${playerScore} and the computer's is ${computerScore}`;
+
 } else if (playerSelection === 'paper' && computerSelection === 'rock') {
-  console.log('You Win!');
-    return playerScore += 1;
+  ++playerScore;
+  ++gamesPlayed;
+  return `You Win that round! Your score is ${playerScore} and the computer's is ${computerScore}`;
+
 } else if (playerSelection === 'paper' && computerSelection === 'paper') {
     return'Draw!';
+
 } else if (playerSelection === 'scissors' && computerSelection === 'scissors') {
     return 'Draw!';
+
 } else if (playerSelection === 'scissors' && computerSelection === 'rock') {
-  console.log('You Lose!');
-    return computerScore += 1;
+    ++computerScore;
+    ++gamesPlayed;
+    return `You Lose that round! Your score is ${playerScore} and the computer's is ${computerScore}`;
+
 } else if (playerSelection === 'scissors' && computerSelection === 'paper') {
-  console.log('You Win!');
-  return playerScore += 1;
+  ++playerScore;
+  ++gamesPlayed;
+   return `You Win that round! Your score is ${playerScore} and the computer's is ${computerScore}`;
+
 } else (playerSelection != 'rock' || 'paper' || 'scissors') 
     return 'Learn how to spell';
 }
 
-const playerSelection = window.prompt('Please enter rock, paper or scissors').toLowerCase();
-const computerSelection = computerPlay(random);
-console.log(playRound(playerSelection, computerSelection));
+for (; gamesPlayed < 5; ) {
+  const playerSelection = window.prompt('Please enter rock, paper or scissors').toLowerCase();
+  const computerSelection = computerPlay(random);
+  console.log(playRound(playerSelection, computerSelection));
+  victoryCondition()
+}
+
+function victoryCondition() {
+  if ((gamesPlayed == 5) && (playerScore > computerScore)) {
+    alert(`You beat the computer! You won ${playerScore} out of 5 rounds!`);
+  } else if ((gamesPlayed == 5) && (playerScore < computerScore)) {
+    alert(`The computer wins! You lost ${computerScore}`);
+    }
+  }
+
 
 
    
