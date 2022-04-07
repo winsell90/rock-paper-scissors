@@ -12,41 +12,47 @@ function playRound(playerSelection, computerSelection) {
   if (playerSelection === 'rock' && computerSelection === 'scissors') {
     ++playerScore;
     ++gamesPlayed;
-    return `You Win round ${gamesPlayed}! Your score is ${playerScore} and the computer's is ${computerScore}.`;
+    alert('You win! The computer picked ' + computerSelection + `. 
+     You Win round ${gamesPlayed}/5. Your score is ${playerScore} and the computer's score is ${computerScore}.`);
 
   } else if (playerSelection === 'rock' && computerSelection === 'paper') {
     ++computerScore;
     ++gamesPlayed;
-    return `You Lose round ${gamesPlayed}! Your score is ${playerScore} and the computer's is ${computerScore}.`;
+    alert('You Lose! The computer picked ' + computerSelection + `. 
+     You lose round ${gamesPlayed}/5. Your score is ${playerScore} and the computer's score is ${computerScore}.`);
      
 } else if (playerSelection === 'rock' && computerSelection === 'rock') {
-    return 'Draw!';
+  alert('It was a Draw! The computer picked ' + computerSelection + `. Your score is ${playerScore} and the computer's score is ${computerScore}.`)
 
 } else if (playerSelection === 'paper' && computerSelection === 'scissors') {
     ++computerScore;
     ++gamesPlayed;
-    return `You Lose round ${gamesPlayed}! Your score is ${playerScore} and the computer's is ${computerScore}.`;
+    alert('You Lose! The computer picked ' + computerSelection + `. 
+     You lose round ${gamesPlayed}/5. Your score is ${playerScore} and the computer's score is ${computerScore}.`);
 
 } else if (playerSelection === 'paper' && computerSelection === 'rock') {
   ++playerScore;
   ++gamesPlayed;
-  return `You Win round ${gamesPlayed}! Your score is ${playerScore} and the computer's is ${computerScore}.`;
+  alert('You win! The computer picked ' + computerSelection + `. 
+   You Win round ${gamesPlayed}/5. Your score is ${playerScore} and the computer's score is ${computerScore}.`);
 
 } else if (playerSelection === 'paper' && computerSelection === 'paper') {
-    return'Draw!';
+  alert('It was a Draw! The computer picked ' + computerSelection + `. Your score is ${playerScore} and the computer's score is ${computerScore}.`)
 
 } else if (playerSelection === 'scissors' && computerSelection === 'scissors') {
-    return 'Draw!';
+  alert('It was a Draw! The computer picked ' + computerSelection + `. Your score is ${playerScore} and the computer's score is ${computerScore}.`)
 
 } else if (playerSelection === 'scissors' && computerSelection === 'rock') {
     ++computerScore;
     ++gamesPlayed;
-    return `You Lose round ${gamesPlayed}! Your score is ${playerScore} and the computer's is ${computerScore}.`;
+    alert('You Lose! The computer picked ' + computerSelection + `. 
+     You lose round ${gamesPlayed}/5. Your score is ${playerScore} and the computer's score is ${computerScore}.`);
 
 } else if (playerSelection === 'scissors' && computerSelection === 'paper') {
   ++playerScore;
   ++gamesPlayed;
-   return `You Win round ${gamesPlayed}! Your score is ${playerScore} and the computer's is ${computerScore}.`;
+  alert('You win! The computer picked ' + computerSelection + `. 
+   You Win round ${gamesPlayed}/5. Your score is ${playerScore} and the computer's score is ${computerScore}.`);
 
 } else (playerSelection != 'rock' || 'paper' || 'scissors') 
     return 'Learn how to spell.';
