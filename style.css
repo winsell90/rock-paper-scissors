@@ -10,6 +10,7 @@
 .selection1, .selection2, .selection3 {
   display: flex;
   justify-content: center;
+  
 }
 
 body {
