@@ -29,61 +29,35 @@ scissors.addEventListener('click', () => {
 
 });
 
+
 function playRound(playerSelection, computerSelection) {
-  if (playerSelection === 'rock' && computerSelection === 'scissors') {
+  if ((playerSelection === 'rock' && computerSelection === 'scissors') || (playerSelection === 'paper' && computerSelection === 'rock') || (playerSelection === 'scissors' && computerSelection === 'paper')) {
     ++playerScore;
     ++gamesPlayed;
     results.textContent = 'You win! The computer picked ' + computerSelection + `. 
      Your score is ${playerScore} and the computer's score is ${computerScore}.`;
-     round.textContent = `That was round ${gamesPlayed}. The first to achieve a score of 5 wins the game.`;
+     round.textContent = `The first to achieve a score of 5 wins the game. That was round ${gamesPlayed}.`;
+     victoryCondition();
 
-  } else if (playerSelection === 'rock' && computerSelection === 'paper') {
+  } else if ((playerSelection === 'rock' && computerSelection === 'paper') || (playerSelection === 'paper' && computerSelection === 'scissors') || (playerSelection === 'scissors' && computerSelection === 'rock')) {
     ++computerScore;
     ++gamesPlayed;
     results.textContent = 'You lose! The computer picked ' + computerSelection + `. 
      Your score is ${playerScore} and the computer's score is ${computerScore}.`;
-     round.textContent = `That was round ${gamesPlayed}. The first to achieve a score of 5 wins the game.`;
+     round.textContent = `The first to achieve a score of 5 wins the game. That was round ${gamesPlayed}.`;
+     victoryCondition();
      
-} else if (playerSelection === 'rock' && computerSelection === 'rock') {
-  alert('It was a Draw! The computer picked ' + computerSelection + `. Your score is ${playerScore} and the computer's score is ${computerScore}.`)
-
-} else if (playerSelection === 'paper' && computerSelection === 'scissors') {
-    ++computerScore;
-    ++gamesPlayed;
-    results.textContent = 'You lose! The computer picked ' + computerSelection + `. 
+} else if ((playerSelection === 'rock' && computerSelection === 'rock') || (playerSelection === 'paper' && computerSelection === 'paper') || (playerSelection === 'scissors' && computerSelection === 'scissors')) {
+  results.textContent = 'It\'s a draw! The computer picked ' + computerSelection + `. 
      Your score is ${playerScore} and the computer's score is ${computerScore}.`;
-     round.textContent = `That was round ${gamesPlayed}. The first to achieve a score of 5 wins the game.`;
-
-} else if (playerSelection === 'paper' && computerSelection === 'rock') {
-  ++playerScore;
-  ++gamesPlayed;
-  results.textContent = 'You win! The computer picked ' + computerSelection + `. 
-      Your score is ${playerScore} and the computer's score is ${computerScore}.`;
-     round.textContent = `That was round ${gamesPlayed}. The first to achieve a score of 5 wins the game.`;
-
-} else if (playerSelection === 'paper' && computerSelection === 'paper') {
-  alert('It was a Draw! The computer picked ' + computerSelection + `. Your score is ${playerScore} and the computer's score is ${computerScore}.`)
-
-} else if (playerSelection === 'scissors' && computerSelection === 'scissors') {
-  alert('It was a Draw! The computer picked ' + computerSelection + `. Your score is ${playerScore} and the computer's score is ${computerScore}.`)
-
-} else if (playerSelection === 'scissors' && computerSelection === 'rock') {
-    ++computerScore;
-    ++gamesPlayed;
-    results.textContent = 'You lose! The computer picked ' + computerSelection + `. 
-     Your score is ${playerScore} and the computer's score is ${computerScore}.`;
-     round.textContent = `That was round ${gamesPlayed}. The first to achieve a score of 5 wins the game.`;
-
-} else if (playerSelection === 'scissors' && computerSelection === 'paper') {
-  ++playerScore;
-  ++gamesPlayed;
-  results.textContent = 'You win! The computer picked ' + computerSelection + `. 
-     Your score is ${playerScore} and the computer's score is ${computerScore}.`;
-     round.textContent = `That was round ${gamesPlayed}. The first to achieve a score of 5 wins the game.`;
+     round.textContent = `The first to achieve a score of 5 wins the game. That was round ${gamesPlayed}.`;
 
 } else (playerSelection != 'rock' || 'paper' || 'scissors') 
-    return 'Learn how to spell.';
+    return 'where are they clicking..?';
 }
+
+
+
 // below is the loop that plays 5 games for the original console version
 // for (; gamesPlayed < 5; ) {
 //   const playerSelection = window.prompt('Please enter rock, paper or scissors.').toLowerCase();
@@ -93,10 +67,10 @@ function playRound(playerSelection, computerSelection) {
 // }
 
 function victoryCondition() {
-  if ((gamesPlayed == 5) && (playerScore > computerScore)) {
-    alert(`You beat the computer! You won ${playerScore} out of 5 rounds!`);
-  } else if ((gamesPlayed == 5) && (playerScore < computerScore)) {
-    alert(`The computer wins! You lost ${computerScore} out of 5 rounds!`);
+  if (playerScore >= 5) {
+    alert(`You win the game! You won ${playerScore} times in ${gamesPlayed} rounds!`);
+  } else if (computerScore >= 5) {
+    alert(`You lost the game! The computer won ${computerScore} times in ${gamesPlayed} rounds!`);
     }
   }
 
