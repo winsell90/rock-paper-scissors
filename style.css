@@ -1,0 +1,19 @@
+
+
+.selections {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 75vh;
+}
+
+.selection1, .selection2, .selection3 {
+  display: flex;
+  justify-content: center;
+}
+
+body {
+  text-align: center;
+  font-size: 2vw;
+  margin-top: 5%;
+}

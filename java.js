@@ -7,6 +7,20 @@ let playerScore = 0;
 let computerScore = 0;
 let gamesPlayed = 0;
 
+let rock = document.querySelector('.rock');
+rock.addEventListener('click', () => {
+  alert('rock');
+});
+
+let paper = document.querySelector('.paper');
+paper.addEventListener('click', () => {
+  alert('paper')
+});
+
+let scissors = document.querySelector('.scissors');
+scissors.addEventListener('click', () => {
+  alert('scissors');
+});
 
 function playRound(playerSelection, computerSelection) {
   if (playerSelection === 'rock' && computerSelection === 'scissors') {
@@ -57,13 +71,13 @@ function playRound(playerSelection, computerSelection) {
 } else (playerSelection != 'rock' || 'paper' || 'scissors') 
     return 'Learn how to spell.';
 }
-
-for (; gamesPlayed < 5; ) {
-  const playerSelection = window.prompt('Please enter rock, paper or scissors.').toLowerCase();
-  const computerSelection = computerPlay(random);
-  console.log(playRound(playerSelection, computerSelection));
-  victoryCondition()
-}
+// below is the loop that plays 5 games for the original console version
+// for (; gamesPlayed < 5; ) {
+//   const playerSelection = window.prompt('Please enter rock, paper or scissors.').toLowerCase();
+//   const computerSelection = computerPlay(random);
+//   console.log(playRound(playerSelection, computerSelection));
+//   victoryCondition()
+// }
 
 function victoryCondition() {
   if ((gamesPlayed == 5) && (playerScore > computerScore)) {
@@ -72,6 +86,7 @@ function victoryCondition() {
     alert(`The computer wins! You lost ${computerScore} out of 5 rounds!`);
     }
   }
+
 
 
 
