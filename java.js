@@ -44,10 +44,26 @@ scissors.classList.add('clicked');
 
 scissors.addEventListener('transitionend', removeTransition);
 function removeTransition() {
-  this.classList.remove('clicked')
+  this.classList.remove('clicked');
+  this.classList.remove('picked')
+}
+
+function computerChoice(computerSelection) {
+  switch(computerSelection) {
+    case 'rock':
+      rock.classList.add('picked');
+      break;
+    case 'paper':
+      paper.classList.add('picked');
+      break;
+    case 'scissors':
+      scissors.classList.add('picked');
+      break;
+  }
 }
 function playRound(playerSelection) {
   let computerSelection = computerPlay();
+  computerChoice(computerSelection);
   if ((playerSelection === 'rock' && computerSelection === 'scissors') || (playerSelection === 'paper' && computerSelection === 'rock') || (playerSelection === 'scissors' && computerSelection === 'paper')) {
     ++playerScore;
     ++gamesPlayed;

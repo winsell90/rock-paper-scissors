@@ -32,6 +32,11 @@ body {
   transition:all 0.2s;
 }
 
+
 .clicked {
-  transform:scale(1.3);
+  transform:scale(0.5);
+}
+
+.picked {
+  transform:scale(1.5);
 }
