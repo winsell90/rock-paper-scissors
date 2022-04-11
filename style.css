@@ -7,7 +7,13 @@
   min-height: 75vh;
 }
 
+.humanscore {
+  color: blue;
+}
 
+.puterscore {
+  color: red;
+}
 
 .selection1, .selection2, .selection3 {
   display: flex;
@@ -17,6 +23,7 @@
 
 body {
   text-align: center;
+  font-family: 'Bebas Neue';;
   font-size: 2vw;
   margin-top: 5%;
 }
